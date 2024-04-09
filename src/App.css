@@ -1,0 +1,180 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 15px 12px;
+}
+body #root #title {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+body #root .main_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+}
+body #root .main_container section {
+  margin: 5px 5px 10px;
+  max-width: 92vw;
+  box-shadow: 1px 1px 30px -10px #508080;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: 400ms ease-out;
+}
+body #root .main_container section .sub_container_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  background: #4AA3A3;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+body #root .main_container section .sub_container_title label i,
+body #root .main_container section .sub_container_title span i {
+  margin: 0px 10px;
+}
+body #root .main_container section .sub_container_title label {
+  cursor: pointer;
+  padding: 10px;
+  transition: 250ms ease-out;
+}
+body #root .main_container section .sub_container_title label .fa-arrows-left-right-to-line,
+body #root .main_container section .sub_container_title label .fa-arrow-right-to-bracket {
+  transform: rotate(270deg);
+}
+body #root .main_container section .sub_container_title label .fa-arrows-left-right-to-line,
+body #root .main_container section .sub_container_title label .fa-arrow-right-to-bracket,
+body #root .main_container section .sub_container_title label .fa-up-right-and-down-left-from-center,
+body #root .main_container section .sub_container_title label .fa-down-left-and-up-right-to-center {
+  transition: 200ms ease-in;
+}
+body #root .main_container section .sub_container_title label:hover {
+  transition: 250ms ease-in;
+  color: #04FFE9;
+}
+body #root .main_container section.for_editor {
+  width: 300px;
+  max-width: 70%;
+}
+@media screen and (min-width: 540px) {
+  body #root .main_container section.for_editor {
+    width: 450px;
+  }
+}
+@media screen and (min-width: 720px) {
+  body #root .main_container section.for_editor {
+    width: 540px;
+  }
+}
+@media screen and (min-width: 980px) {
+  body #root .main_container section.for_editor {
+    width: 720px;
+  }
+}
+body #root .main_container section.for_editor .fa-arrow-right-to-bracket {
+  display: none;
+}
+body #root .main_container section.for_editor textarea {
+  height: 280px;
+  width: 100%;
+  overflow: auto;
+  background: #C0D8D8;
+  border: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 7px;
+}
+body #root .main_container section.for_previewer .fa-down-left-and-up-right-to-center {
+  display: none;
+}
+body #root .main_container section.for_previewer #preview {
+  display: block;
+  padding: 3px 12px;
+  transition: 400ms ease-in;
+}
+body #root .main_container section.for_previewer #preview h1 {
+  display: block;
+  border-bottom: 2px solid #508080;
+}
+body #root .main_container section.for_previewer #preview h2 {
+  border-bottom: 1px solid #508080;
+}
+body #root .main_container section.for_previewer #preview h1, body #root .main_container section.for_previewer #preview h2, body #root .main_container section.for_previewer #preview h3, body #root .main_container section.for_previewer #preview pre {
+  margin: 15px 0px;
+}
+body #root .main_container section.for_previewer #preview p code {
+  background: #FFF;
+  padding: 1px 3px;
+  color: #111;
+}
+body #root .main_container section.for_previewer #preview p img {
+  max-width: calc(100vw - 15%);
+  padding: 10px 7px;
+  margin: 2px auto;
+}
+body #root .main_container section.for_previewer #preview pre {
+  background: #FFF;
+  padding: 5px;
+}
+body #root .main_container #edt_expander:checked ~ .for_editor {
+  height: 75vh;
+  transition: 400ms ease-in;
+}
+body #root .main_container #edt_expander:checked ~ .for_editor .edt_expand_toggle .fa-arrows-left-right-to-line {
+  display: none;
+  transition: 250ms ease-out;
+}
+body #root .main_container #edt_expander:checked ~ .for_editor .edt_expand_toggle .fa-arrow-right-to-bracket {
+  display: inline-block;
+  transition: 250ms ease-out;
+}
+body #root .main_container #edt_expander:checked ~ .for_editor textarea {
+  height: 70vh;
+}
+body #root .main_container #edt_expander:checked ~ .for_previewer {
+  width: 92vw;
+}
+body #root .main_container #edt_expander:checked ~ .for_previewer .sub_container_title {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+body #root .main_container #edt_expander:checked ~ .for_previewer #preview {
+  display: none;
+  transition: 400ms ease-out;
+}
+body #root .main_container #prv_expander:checked ~ .for_previewer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.1);
+  height: 88vh;
+  width: 80vw;
+  overflow: auto;
+  background: #87b5b5;
+  transition: 200ms ease-in;
+}
+body #root .main_container #prv_expander:checked ~ .for_previewer .sub_container_title {
+  position: sticky;
+  width: 80vw;
+  top: 0%;
+}
+body #root .main_container #prv_expander:checked ~ .for_previewer .sub_container_title .fa-up-right-and-down-left-from-center {
+  display: none;
+  transition: 200ms ease-in;
+}
+body #root .main_container #prv_expander:checked ~ .for_previewer .sub_container_title .fa-down-left-and-up-right-to-center {
+  display: inline-block;
+  transition: 200ms ease-in;
+}
+body #root .main_container #prv_expander:checked ~ .for_previewer #preview p img {
+  width: 75vw;
+}/*# sourceMappingURL=App.css.map */
